@@ -34,4 +34,12 @@ public class MultiOperation extends AbstractOperation implements Operation{
     )
     private List<MultiOperation> subMultiOperations = new ArrayList<>();
 
+    public MultiOperation update(MultiOperation multiOperation){
+        super.updateAbstract(multiOperation);
+
+        this.setSimpleOperations(multiOperation.getSimpleOperations());
+        this.setSubMultiOperations(multiOperation.getSubMultiOperations());
+        return this;
+    }
+
 }

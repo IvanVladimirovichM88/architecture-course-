@@ -26,4 +26,12 @@ public class MachineType {
     List<Machine> machines = new ArrayList<>();
 
 
+    public MachineType update(MachineType machineType){
+
+        this.setType(machineType.getType());
+        this.setMachines(machineType.getMachines());
+
+        return this;
+    }
+
 }

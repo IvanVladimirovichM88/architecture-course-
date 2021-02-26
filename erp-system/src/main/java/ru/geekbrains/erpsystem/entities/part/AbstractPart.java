@@ -28,4 +28,13 @@ public class AbstractPart {
     @JoinColumn(name = "technology_id")
     MultiOperation technology;
 
+    public AbstractPart updateAbstract(AbstractPart part){
+        this.setDrawing(part.getDrawing());
+        this.setDeveloper(part.getDeveloper());
+        this.setTime(part.getTime());
+        this.setTechnology(part.getTechnology());
+
+        return this;
+    }
+
 }

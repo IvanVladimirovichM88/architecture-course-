@@ -14,4 +14,9 @@ public class SimplePart extends AbstractPart implements Part{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "simple_part_id")
     private Long id;
+
+    public SimplePart update(SimplePart simplePart){
+        super.updateAbstract(simplePart);
+        return this;
+    }
 }

@@ -32,7 +32,17 @@ public class User {
     List<Role> roles = new ArrayList<>();
 
     @OneToMany(mappedBy = "developer")
-    List<Drawing> drawings;
+    List<Drawing> drawings = new ArrayList<>();
+
+
+    public User update (User user){
+        this.setUsername(user.getUsername());
+        this.setPassword(user.getPassword());
+        this.setName(user.getName());
+        this.setRoles(user.getRoles());
+
+        return this;
+    }
 
 
 }

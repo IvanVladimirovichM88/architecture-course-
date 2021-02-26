@@ -23,5 +23,11 @@ public class Billet { // заготовка для детали
     @Column(name = "weight_fld")
     Double weight;
 
+    public Billet update(Billet billet){
+        this.setTitle(billet.title);
+        this.setMaterial(billet.getMaterial());
+        this.setWeight(billet.getWeight());
+        return this;
+    }
 
 }

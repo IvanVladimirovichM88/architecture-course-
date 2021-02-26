@@ -15,4 +15,9 @@ public class Role {
 
     @Column(name = "title_fld", unique = true)
     String title;
+
+    public Role update(Role role){
+        this.setTitle(role.getTitle());
+        return this;
+    }
 }

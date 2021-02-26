@@ -3,6 +3,7 @@ package ru.geekbrains.erpsystem.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,6 +23,12 @@ public class Machine {
             name = "machine_type_machine_tbl",
             joinColumns = @JoinColumn(name = "machine_id"),
             inverseJoinColumns = @JoinColumn(name = "machine_type_id"))
-    List<MachineType> types;
+    List<MachineType> types = new ArrayList<>();
 
+    public Machine update(Machine machine){
+        this.setTitle(machine.getTitle());
+        this.setTypes(machine.getTypes());
+
+        return this;
+    }
 }

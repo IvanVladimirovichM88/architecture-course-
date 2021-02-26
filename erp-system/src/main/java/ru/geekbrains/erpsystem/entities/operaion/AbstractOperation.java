@@ -29,4 +29,13 @@ public class AbstractOperation {
     @JoinColumn(name = "developer_user_id")
     private User developer;
 
+    public AbstractOperation updateAbstract(AbstractOperation operation){
+        this.setStartDetailDraw(operation.getStartDetailDraw());
+        this.setFinalDetailDraw(operation.getFinalDetailDraw());
+        this.setTime(operation.getTime());
+        this.setDeveloper(operation.getDeveloper());
+
+        return this;
+    }
+
 }

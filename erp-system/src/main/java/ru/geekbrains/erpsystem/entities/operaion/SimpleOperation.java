@@ -30,4 +30,15 @@ public class SimpleOperation extends AbstractOperation implements Operation {
     @JoinColumn(name = "machine_id")
     private Machine machine;
 
+    public SimpleOperation update (SimpleOperation operation){
+
+        super.updateAbstract(operation);
+
+        this.setDescription(operation.getDescription());
+        this.setOperatorMachine(operation.getOperatorMachine());
+        this.setMachine(operation.getMachine());
+
+        return this;
+    }
+
 }

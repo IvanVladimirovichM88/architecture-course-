@@ -27,5 +27,13 @@ public class Drawing {
     @JoinColumn(name = "billet_id")
     Billet billet;
 
+    public Drawing update(Drawing drawing){
+        this.setNumber(drawing.getNumber());
+        this.setTitle(drawing.getTitle());
+        this.setDeveloper(drawing.getDeveloper());
+        this.setBillet(drawing.getBillet());
+        return this;
+    }
+
 
 }

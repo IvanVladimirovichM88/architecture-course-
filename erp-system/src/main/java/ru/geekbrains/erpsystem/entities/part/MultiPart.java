@@ -33,4 +33,14 @@ public class MultiPart extends AbstractPart implements Part {
     )
     List<MultiPart> subMultiPart = new ArrayList<>();
 
+    public MultiPart update(MultiPart multiPart){
+
+        super.updateAbstract(multiPart);
+
+        this.setSimpleParts(multiPart.getSimpleParts());
+        this.setSubMultiPart(multiPart.getSubMultiPart());
+
+        return this;
+    }
+
 }
