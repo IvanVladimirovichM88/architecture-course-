@@ -20,13 +20,13 @@ public class Billet { // заготовка для детали
     @Column(name = "material_fld")
     String material;
 
-    @Column(name = "weight_fld")
-    Double weight;
+    @Column(name = "standard_fld")
+    String standard;
 
     public Billet update(Billet billet){
         this.setTitle(billet.title);
         this.setMaterial(billet.getMaterial());
-        this.setWeight(billet.getWeight());
+        this.setStandard(billet.getStandard());
         return this;
     }
 

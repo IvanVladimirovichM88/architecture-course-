@@ -3,16 +3,17 @@ package ru.geekbrains.erpsystem.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Data
-@Table
-public class MachineType {
+@Table(name = "machine_type_tbl")
+public class MachineType implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "machine_tipe_id")
+    @Column(name = "machine_type_id")
     Long id;
 
     @Column(name = "type_fld")
