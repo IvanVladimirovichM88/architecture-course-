@@ -1,11 +1,15 @@
 package ru.geekbrains.erpsystem.entities;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import ru.geekbrains.erpsystem.data.DrawingData;
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "drawing_tbl")
 public class Drawing {
     @Id
@@ -34,6 +38,5 @@ public class Drawing {
         this.setBillet(drawing.getBillet());
         return this;
     }
-
 
 }

@@ -2,6 +2,7 @@ package ru.geekbrains.erpsystem.entities.part;
 
 import lombok.Getter;
 import lombok.Setter;
+import ru.geekbrains.erpsystem.entities.Drawing;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -32,6 +33,15 @@ public class MultiPart extends AbstractPart implements Part {
             inverseJoinColumns = @JoinColumn(name = "sub_multi_part")
     )
     List<MultiPart> subMultiPart = new ArrayList<>();
+
+    public MultiPart() {
+    }
+
+    public MultiPart(Drawing drawing, List<SimplePart> simpleParts, List<MultiPart> subMultiPart) {
+        super.setDrawing(drawing);
+        this.simpleParts = simpleParts;
+        this.subMultiPart = subMultiPart;
+    }
 
     public MultiPart update(MultiPart multiPart){
 

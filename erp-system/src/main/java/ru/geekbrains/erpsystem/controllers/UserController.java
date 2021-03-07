@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import ru.geekbrains.erpsystem.data.UserData;
 import ru.geekbrains.erpsystem.entities.User;
 import ru.geekbrains.erpsystem.services.RoleService;
 import ru.geekbrains.erpsystem.services.UserService;
@@ -34,16 +35,16 @@ public class UserController {
     public String getAddUserForm(
             Model model
     ){
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new UserData());
         model.addAttribute("allRoles", roleService.getAll());
         return "forms/add_user_form";
     }
 
     @PostMapping("/add")
     public String addUser(
-            @ModelAttribute User user
+            @ModelAttribute UserData userData
     ){
-        userService.insert(user);
+        userService.insert(userData);
         return "redirect:all";
     }
 
